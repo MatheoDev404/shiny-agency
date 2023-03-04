@@ -8,13 +8,21 @@ import Survey from './pages/Survey'
 import Error from './components/Error'
 import Freelances from './pages/Freelances'
 import Results from './pages/Results'
+import { createGlobalStyle } from 'styled-components'
 
 const container = document.getElementById('root')
 const root = createRoot(container)
 
+const GlobalStyle = createGlobalStyle`
+    div {
+        font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    }
+`
+
 root.render(
   <React.StrictMode>
     <Router>
+      <GlobalStyle />
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
